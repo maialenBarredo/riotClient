@@ -57,47 +57,10 @@ Mirar el esquema en `RiotClient/images/esquema_bd.png`
 
 ---
 
-## Cómo ejecutarlo
+## Entrar al admin
 
-En una terminal de Windows. **Los pasos 1 a 4 solo se hacen la primera vez.**
+Para entrar al admin (`/admin/`) usamos el usuario:
 
-1. Bajar el proyecto (si ya lo tenéis, solo `git pull`) y entrar en la carpeta donde está `manage.py`:
-
-   ```bash
-   git clone https://github.com/maialenBarredo/riotClient.git
-   cd riotClient\riotClient
-   ```
-
-2. Crear y activar el entorno virtual:
-
-   ```bash
-   python -m venv env1
-   env1\Scripts\activate
-   ```
-
-3. Instalar Django:
-
-   ```bash
-   pip install django==6.1.2
-   ```
-
-4. Crear la base de datos y cargar los datos de prueba:
-
-   ```bash
-   python manage.py migrate
-   python manage.py loaddata datos_prueba
-   ```
-
-5. Arrancar el servidor y abrir <http://127.0.0.1:8000/appClient/> en el navegador:
-
-   ```bash
-   python manage.py runserver
-   ```
-
-### Entrar al admin
-
-Para entrar al admin (`/admin/`) cada uno tiene que crearse su usuario, porque cada base de datos es la suya:
-
-```bash
-python manage.py createsuperuser
-```
+| Usuario | Contraseña |
+|---|---|
+| `admin` | `admin` |
