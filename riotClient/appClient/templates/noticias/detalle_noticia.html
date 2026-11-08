@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ noticia.nombre }}{% endblock %}
+
+{% block content %}
+<h1>{{ noticia.nombre }}</h1>
+
+<p>
+    <span class="etiqueta">{{ noticia.get_tipo_display }}</span>
+    {{ noticia.fecha|date:"j F Y, H:i" }}
+</p>
+
+{% if noticia.foto %}
+    <img class="foto-noticia" src="{{ noticia.foto }}" alt="Foto de {{ noticia.nombre }}">
+{% endif %}
+
+{% if noticia.contenido %}<p>{{ noticia.contenido }}</p>{% endif %}
+
+<p><strong>Juego:</strong>
+    <a href="{% url 'detalle_juego' noticia.juego.id %}">{{ noticia.juego.nombre }}</a>
+</p>
+
+<a href="{% url 'lista_noticias' %}">Volver al listado de noticias</a>
+{% endblock %}

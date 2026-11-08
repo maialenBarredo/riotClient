@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Riot Client{% endblock %}</title>
+
+    <!-- estilos de la web -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- header: logo y menú -->
+    <div id="header">
+        <h1><a href="{% url 'index' %}">RIOT<span>CLIENT</span></a></h1>
+
+        {# nombre = la url en la que estamos, para marcar el menú #}
+        {% with nombre=request.resolver_match.url_name %}
+        <ul id="menu">
+            <li {% if nombre == 'index' %}class="activo"{% endif %}><a href="{% url 'index' %}">Inicio</a></li>
+            <li {% if 'juego' in nombre %}class="activo"{% endif %}><a href="{% url 'lista_juegos' %}">Juegos</a></li>
+            <li {% if 'noticia' in nombre %}class="activo"{% endif %}><a href="{% url 'lista_noticias' %}">Noticias</a></li>
+            <li {% if 'usuario' in nombre %}class="activo"{% endif %}><a href="{% url 'lista_usuarios' %}">Usuarios</a></li>
+            <li {% if 'icono' in nombre %}class="activo"{% endif %}><a href="{% url 'lista_iconos' %}">Iconos</a></li>
+        </ul>
+        {% endwith %}
+    </div>
+
+    <!-- contenido de cada página -->
+    <div id="content">
+        {% block content %}
+        <h1>Bienvenido al cliente</h1>
+        <p>Elige una opción del menú.</p>
+        {% endblock %}
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <p>
+            <a href="{% url 'index' %}">Inicio</a> |
+            <a href="{% url 'lista_juegos' %}">Juegos</a> |
+            <a href="{% url 'lista_noticias' %}">Noticias</a> |
+            <a href="{% url 'lista_usuarios' %}">Usuarios</a> |
+            <a href="{% url 'lista_iconos' %}">Iconos</a>
+        </p>
+        <p>Proyecto de Ingeniería Web · © {% now "Y" %}</p>
+    </div>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

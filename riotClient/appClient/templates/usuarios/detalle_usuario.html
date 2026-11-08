@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}{{ usuario }}{% endblock %}
+
+{% block content %}
+<h1>{{ usuario.game_name }}<span class="tag">#{{ usuario.tag_line }}</span></h1>
+
+<p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+<p><strong>Email:</strong> {{ usuario.email }}</p>
+{% if usuario.edad %}<p><strong>Edad:</strong> {{ usuario.edad }}</p>{% endif %}
+{% if usuario.pais %}<p><strong>País:</strong> {{ usuario.pais }}</p>{% endif %}
+<p><strong>Saldo:</strong> {{ usuario.dinero }}</p>
+
+<h2>Sus juegos</h2>
+{# usuariojuego_set = las filas de UsuarioJuego de este usuario #}
+{% for uj in usuario.usuariojuego_set.all %}
+    <div class="juego-usuario">
+        {% if uj.icono %}
+            <img class="icono" src="{{ uj.icono.imagen }}" alt="{{ uj.icono.nombre }}">
+        {% else %}
+            <div class="icono vacio"></div>
+        {% endif %}
+        <div class="juego-usuario-texto">
+            <a href="{% url 'detalle_juego' uj.juego.id %}">{{ uj.juego.nombre }}</a>
+            <p>Servidor: {% if uj.servidor %}{{ uj.servidor.nombre }}{% else %}sin servidor{% endif %}</p>
+            <p>
+                Icono:
+                {% if uj.icono %}
+                    <a href="{% url 'detalle_icono' uj.icono.id %}">{{ uj.icono.nombre }}</a>
+                {% else %}
+                    sin icono
+                {% endif %}
+            </p>
+        </div>
+        {# de momento el botón solo se ve, todavía no hace nada #}
+        <button type="button" class="boton">Jugar</button>
+    </div>
+{% empty %}
+    <p>Todavía no tiene ningún juego.</p>
+{% endfor %}
+
+<h2>Amigos</h2>
+<ul>
+    {% for amigo in usuario.amigos.all %}
+        <li><a href="{% url 'detalle_usuario' amigo.id %}">{{ amigo }}</a></li>
+    {% empty %}
+        <li>Todavía no tiene amigos.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'lista_usuarios' %}">Volver al listado de usuarios</a>
+{% endblock %}

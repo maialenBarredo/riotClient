@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Riot Client{% endblock %}
+
+{% block content %}
+<h1>Bienvenido al cliente</h1>
+
+<h2>Juegos</h2>
+<div class="tarjetas">
+    {% for juego in juegos %}
+        <a class="tarjeta" href="{% url 'detalle_juego' juego.id %}">
+            <div class="tarjeta-foto" {% if juego.foto %}style="background-image: url('{{ juego.foto }}');"{% endif %}></div>
+            <div class="tarjeta-texto">
+                <h3>{{ juego.nombre }}</h3>
+                {% if juego.genero %}<p>{{ juego.genero }}</p>{% endif %}
+            </div>
+        </a>
+    {% empty %}
+        <p>No hay juegos registrados.</p>
+    {% endfor %}
+</div>
+
+<h2>Últimas noticias</h2>
+<div class="tarjetas">
+    {# solo las 5 primeras, ya vienen ordenadas por fecha #}
+    {% for noticia in noticias|slice:":5" %}
+        <a class="tarjeta" href="{% url 'detalle_noticia' noticia.id %}">
+            <div class="tarjeta-foto" {% if noticia.foto %}style="background-image: url('{{ noticia.foto }}');"{% endif %}></div>
+            <div class="tarjeta-texto">
+                <span class="etiqueta">{{ noticia.get_tipo_display }}</span>
+                <h3>{{ noticia.nombre }}</h3>
+                <p>{{ noticia.juego.nombre }} · {{ noticia.fecha|date:"j F Y" }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>No hay noticias registradas.</p>
+    {% endfor %}
+</div>
+{% endblock %}

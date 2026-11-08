@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Juegos{% endblock %}
+
+{% block content %}
+<h1>Juegos</h1>
+
+<div class="tarjetas">
+    {% for juego in juegos %}
+        <a class="tarjeta" href="{% url 'detalle_juego' juego.id %}">
+            <div class="tarjeta-foto" {% if juego.foto %}style="background-image: url('{{ juego.foto }}');"{% endif %}></div>
+            <div class="tarjeta-texto">
+                <h3>{{ juego.nombre }}</h3>
+                {% if juego.genero %}<p>{{ juego.genero }}</p>{% endif %}
+            </div>
+        </a>
+    {% empty %}
+        <p>No hay juegos registrados.</p>
+    {% endfor %}
+</div>
+{% endblock %}

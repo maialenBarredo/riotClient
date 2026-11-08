@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Usuarios{% endblock %}
+
+{% block content %}
+<h1>Usuarios</h1>
+
+<ul class="lista">
+    {% for usuario in usuarios %}
+        <li>
+            <a href="{% url 'detalle_usuario' usuario.id %}">{{ usuario }}</a>
+            — {{ usuario.nombre }}
+            {% if usuario.pais %}({{ usuario.pais }}){% endif %}
+        </li>
+    {% empty %}
+        <li>No hay usuarios registrados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

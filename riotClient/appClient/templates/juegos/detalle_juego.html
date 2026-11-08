@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}{{ juego.nombre }}{% endblock %}
+
+{% block content %}
+<!-- apartado del juego: foto de fondo, nombre y botón -->
+<div class="portada" {% if juego.foto %}style="background-image: url('{{ juego.foto }}');"{% endif %}>
+    <div class="portada-texto">
+        <h1>{{ juego.nombre }}</h1>
+        {% if juego.genero %}<p>{{ juego.genero }}</p>{% endif %}
+        {# de momento el botón solo se ve, todavía no hace nada #}
+        <button type="button" class="boton">Instalar</button>
+    </div>
+</div>
+
+{% if juego.descripcion %}<p>{{ juego.descripcion }}</p>{% endif %}
+{% if juego.info %}<p class="info">{{ juego.info }}</p>{% endif %}
+
+<h2>Noticias</h2>
+<div class="tarjetas">
+    {% for noticia in juego.noticias.all %}
+        <a class="tarjeta" href="{% url 'detalle_noticia' noticia.id %}">
+            <div class="tarjeta-foto" {% if noticia.foto %}style="background-image: url('{{ noticia.foto }}');"{% endif %}></div>
+            <div class="tarjeta-texto">
+                <span class="etiqueta">{{ noticia.get_tipo_display }}</span>
+                <h3>{{ noticia.nombre }}</h3>
+                <p>{{ noticia.fecha|date:"j F Y" }}</p>
+            </div>
+        </a>
+    {% empty %}
+        <p>Este juego todavía no tiene noticias.</p>
+    {% endfor %}
+</div>
+
+<h2>Iconos</h2>
+<div class="iconos">
+    {% for icono in juego.iconos.all %}
+        <a class="icono-card" href="{% url 'detalle_icono' icono.id %}">
+            <img class="icono" src="{{ icono.imagen }}" alt="{{ icono.nombre }}">
+            <span>{{ icono.nombre }}</span>
+        </a>
+    {% empty %}
+        <p>Este juego todavía no tiene iconos.</p>
+    {% endfor %}
+</div>
+
+<h2>Servidores</h2>
+<ul class="servidores">
+    {% for servidor in juego.servidores.all %}
+        <li><strong>{{ servidor.nombre }}</strong>{% if servidor.zona %} · {{ servidor.zona }}{% endif %}</li>
+    {% empty %}
+        <li>Todavía no hay servidores.</li>
+    {% endfor %}
+</ul>
+
+<h2>Jugadores</h2>
+<ul>
+    {% for usuario in juego.usuarios.all %}
+        <li><a href="{% url 'detalle_usuario' usuario.id %}">{{ usuario }}</a></li>
+    {% empty %}
+        <li>Nadie tiene este juego todavía.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'lista_juegos' %}">Volver al listado de juegos</a>
+{% endblock %}

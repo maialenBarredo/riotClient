@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ icono.nombre }}{% endblock %}
+
+{% block content %}
+<h1>{{ icono.nombre }}</h1>
+
+<img class="icono-grande" src="{{ icono.imagen }}" alt="{{ icono.nombre }}">
+
+<p><strong>Juego:</strong>
+    {% if icono.juego %}
+        <a href="{% url 'detalle_juego' icono.juego.id %}">{{ icono.juego.nombre }}</a>
+    {% else %}
+        General (sirve para todos los juegos)
+    {% endif %}
+</p>
+
+<h2>Usuarios que lo usan</h2>
+<ul>
+    {% for uj in icono.usuariojuego_set.all %}
+        <li><a href="{% url 'detalle_usuario' uj.usuario.id %}">{{ uj.usuario }}</a> en {{ uj.juego.nombre }}</li>
+    {% empty %}
+        <li>Nadie lo usa todavía.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'lista_iconos' %}">Volver al listado de iconos</a>
+{% endblock %}

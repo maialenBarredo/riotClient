@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Iconos{% endblock %}
+
+{% block content %}
+<h1>Iconos</h1>
+
+{# los iconos salen separados por juego #}
+{% regroup iconos by juego as grupos %}
+{% for grupo in grupos %}
+    <h2>{% if grupo.grouper %}{{ grupo.grouper.nombre }}{% else %}General{% endif %}</h2>
+    <div class="iconos">
+        {% for icono in grupo.list %}
+            <a class="icono-card" href="{% url 'detalle_icono' icono.id %}">
+                <img class="icono" src="{{ icono.imagen }}" alt="{{ icono.nombre }}">
+                <span>{{ icono.nombre }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% empty %}
+    <p>No hay iconos registrados.</p>
+{% endfor %}
+{% endblock %}

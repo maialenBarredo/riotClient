@@ -1,0 +1,851 @@
+[
+  {
+    "model": "appClient.juego",
+    "pk": 1,
+    "fields": {
+      "nombre": "League of Legends",
+      "genero": "MOBA",
+      "descripcion": "Juego de estrategia en equipo en el que controlas a un campeón con habilidades únicas. En el modo clásico, dos equipos de cinco juegan para destruir el nexo del rival. Hay más modos para jugar de otras formas.",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+      "info": "Plataforma: PC (Windows y macOS). Es gratis."
+    }
+  },
+  {
+    "model": "appClient.juego",
+    "pk": 2,
+    "fields": {
+      "nombre": "Valorant",
+      "genero": "Shooter táctico",
+      "descripcion": "Shooter táctico en primera persona por equipos. En los modos principales, dos equipos de cinco juegan por rondas: unos atacan y plantan la Spike y los otros defienden. Cada agente tiene habilidades únicas. También hay modos más rápidos y más relajados.",
+      "foto": "https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png",
+      "info": "Plataforma: PC, PlayStation 5 y Xbox Series. Es gratis."
+    }
+  },
+  {
+    "model": "appClient.juego",
+    "pk": 3,
+    "fields": {
+      "nombre": "Teamfight Tactics",
+      "genero": "Autobattler",
+      "descripcion": "Autobattler en el que juegan 8 personas a la vez. Compras campeones, los colocas en el tablero y pelean solos contra los de los otros jugadores. Gana el último que se quede en pie. También hay un modo por parejas.",
+      "foto": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d63adacd93e313c1e61bbeb2eb37d8c4ca85848d-1920x1080.jpg",
+      "info": "Plataforma: PC y móvil, con juego cruzado entre ellas. Es gratis."
+    }
+  },
+  {
+    "model": "appClient.juego",
+    "pk": 5,
+    "fields": {
+      "nombre": "Legends of Runeterra",
+      "genero": "Juego de cartas",
+      "descripcion": "Juego de cartas digital de 1 contra 1 ambientado en Runeterra. Montas un mazo con cartas de hasta dos regiones. Cada ronda uno ataca y el otro defiende, y gana quien deje el nexo rival sin vida. También tiene un modo para un jugador, Path of Champions.",
+      "foto": "https://playruneterra.com/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/image/share-image.jpg",
+      "info": "Plataforma: PC y móvil. Es gratis."
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 1,
+    "fields": {
+      "nombre": "Nuevo parche de equilibrio",
+      "fecha": "2026-11-05T10:00:00+01:00",
+      "contenido": "Ajustes en varios campeones y objetos para equilibrar las partidas. (Noticia de ejemplo.)",
+      "tipo": "parche",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 2,
+    "fields": {
+      "nombre": "Llega el evento de temporada",
+      "fecha": "2026-11-03T12:00:00+01:00",
+      "contenido": "Misiones especiales, recompensas y un modo de juego temporal. (Noticia de ejemplo.)",
+      "tipo": "evento",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 3,
+    "fields": {
+      "nombre": "Camiseta oficial del torneo",
+      "fecha": "2026-10-30T09:30:00+01:00",
+      "contenido": "Ya está disponible la nueva colección de camisetas y gorras. (Noticia de ejemplo.)",
+      "tipo": "merchandising",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 4,
+    "fields": {
+      "nombre": "Cambios en la rotación de mapas",
+      "fecha": "2026-11-04T18:00:00+01:00",
+      "contenido": "Esta semana cambian los mapas disponibles en las partidas igualadas. (Noticia de ejemplo.)",
+      "tipo": "actualizacion",
+      "foto": "https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/splash.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 5,
+    "fields": {
+      "nombre": "Notas del parche: ajustes de agentes",
+      "fecha": "2026-11-02T11:00:00+01:00",
+      "contenido": "Pequeños cambios en las habilidades de varios agentes. (Noticia de ejemplo.)",
+      "tipo": "parche",
+      "foto": "https://media.valorant-api.com/maps/2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba/splash.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 6,
+    "fields": {
+      "nombre": "Torneo de la comunidad este fin de semana",
+      "fecha": "2026-10-31T16:00:00+01:00",
+      "contenido": "Inscríbete con tu equipo y juega por premios exclusivos. (Noticia de ejemplo.)",
+      "tipo": "evento",
+      "foto": "https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/splash.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 7,
+    "fields": {
+      "nombre": "Nuevo set disponible",
+      "fecha": "2026-11-05T09:00:00+01:00",
+      "contenido": "Llegan nuevos campeones, rasgos y objetos al tablero. (Noticia de ejemplo.)",
+      "tipo": "actualizacion",
+      "foto": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/d63adacd93e313c1e61bbeb2eb37d8c4ca85848d-1920x1080.jpg",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 8,
+    "fields": {
+      "nombre": "Parche: ajustes de rasgos",
+      "fecha": "2026-11-01T10:30:00+01:00",
+      "contenido": "Se reequilibran varios rasgos para variar las composiciones. (Noticia de ejemplo.)",
+      "tipo": "parche",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_HextechBirb_Tocker_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 9,
+    "fields": {
+      "nombre": "Merchandising: tapete de juego",
+      "fecha": "2026-10-28T13:00:00+01:00",
+      "contenido": "Ya puedes reservar el tapete oficial para tus partidas. (Noticia de ejemplo.)",
+      "tipo": "merchandising",
+      "foto": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_Choncc_Classic_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 13,
+    "fields": {
+      "nombre": "Llega una nueva expansión",
+      "fecha": "2026-11-04T12:00:00+01:00",
+      "contenido": "Nuevas cartas, campeones y hechizos para tus mazos. (Noticia de ejemplo.)",
+      "tipo": "actualizacion",
+      "foto": "https://playruneterra.com/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/image/share-image.jpg",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 14,
+    "fields": {
+      "nombre": "Ajustes de cartas",
+      "fecha": "2026-11-01T11:00:00+01:00",
+      "contenido": "Se retocan varias cartas para equilibrar los mazos. (Noticia de ejemplo.)",
+      "tipo": "parche",
+      "foto": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01DE042-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.noticia",
+    "pk": 15,
+    "fields": {
+      "nombre": "Cartas de colección en la tienda",
+      "fecha": "2026-10-27T10:00:00+01:00",
+      "contenido": "Ya puedes ver los nuevos sobres y los reversos de cartas. (Noticia de ejemplo.)",
+      "tipo": "merchandising",
+      "foto": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01PZ040-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 1,
+    "fields": {
+      "nombre": "Ahri",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Ahri.png",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 2,
+    "fields": {
+      "nombre": "Yasuo",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Yasuo.png",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 3,
+    "fields": {
+      "nombre": "Lux",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Lux.png",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 4,
+    "fields": {
+      "nombre": "Tocker",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_HextechBirb_Tocker_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 5,
+    "fields": {
+      "nombre": "Choncc",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_Choncc_Classic_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 6,
+    "fields": {
+      "nombre": "Gekko",
+      "imagen": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/displayicon.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 7,
+    "fields": {
+      "nombre": "Fade",
+      "imagen": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 8,
+    "fields": {
+      "nombre": "Breach",
+      "imagen": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/displayicon.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 9,
+    "fields": {
+      "nombre": "Deadlock",
+      "imagen": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/displayicon.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 10,
+    "fields": {
+      "nombre": "Tejo",
+      "imagen": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/displayicon.png",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 11,
+    "fields": {
+      "nombre": "Riot",
+      "imagen": "https://cdn.simpleicons.org/riotgames/D32936",
+      "juego": null
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 13,
+    "fields": {
+      "nombre": "Dowsie",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_Dowsie_Base_Classic_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 14,
+    "fields": {
+      "nombre": "Umbra",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_Umbra_Classic_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 15,
+    "fields": {
+      "nombre": "Pengu Featherknight",
+      "imagen": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/tft-tactician/Tooltip_PenguKnight_Classic_Tier1.png",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 21,
+    "fields": {
+      "nombre": "Lux",
+      "imagen": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01DE042-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 22,
+    "fields": {
+      "nombre": "Garen",
+      "imagen": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01DE012-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 23,
+    "fields": {
+      "nombre": "Jinx",
+      "imagen": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01PZ040-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 24,
+    "fields": {
+      "nombre": "Yasuo",
+      "imagen": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01IO015-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.icono",
+    "pk": 25,
+    "fields": {
+      "nombre": "Teemo",
+      "imagen": "https://dd.b.pvp.net/latest/set1/en_us/img/cards/01PZ008-full.png",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 1,
+    "fields": {
+      "nombre": "BR",
+      "zona": "Brasil",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 2,
+    "fields": {
+      "nombre": "EUNE",
+      "zona": "Europa Nórdica y del Este",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 3,
+    "fields": {
+      "nombre": "EUW",
+      "zona": "Europa Oeste",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 4,
+    "fields": {
+      "nombre": "JP",
+      "zona": "Japón",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 5,
+    "fields": {
+      "nombre": "KR",
+      "zona": "Corea",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 6,
+    "fields": {
+      "nombre": "LAN",
+      "zona": "Latinoamérica Norte",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 7,
+    "fields": {
+      "nombre": "LAS",
+      "zona": "Latinoamérica Sur",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 8,
+    "fields": {
+      "nombre": "ME",
+      "zona": "Oriente Medio",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 9,
+    "fields": {
+      "nombre": "NA",
+      "zona": "Norteamérica",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 10,
+    "fields": {
+      "nombre": "OCE",
+      "zona": "Oceanía",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 11,
+    "fields": {
+      "nombre": "RU",
+      "zona": "Rusia",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 12,
+    "fields": {
+      "nombre": "SEA",
+      "zona": "Sudeste Asiático",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 13,
+    "fields": {
+      "nombre": "TR",
+      "zona": "Turquía",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 14,
+    "fields": {
+      "nombre": "TW",
+      "zona": "Taiwán, Hong Kong y Macao",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 15,
+    "fields": {
+      "nombre": "VN",
+      "zona": "Vietnam",
+      "juego": 1
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 16,
+    "fields": {
+      "nombre": "BR",
+      "zona": "Brasil",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 17,
+    "fields": {
+      "nombre": "EUNE",
+      "zona": "Europa Nórdica y del Este",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 18,
+    "fields": {
+      "nombre": "EUW",
+      "zona": "Europa Oeste",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 19,
+    "fields": {
+      "nombre": "JP",
+      "zona": "Japón",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 20,
+    "fields": {
+      "nombre": "KR",
+      "zona": "Corea",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 21,
+    "fields": {
+      "nombre": "LAN",
+      "zona": "Latinoamérica Norte",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 22,
+    "fields": {
+      "nombre": "LAS",
+      "zona": "Latinoamérica Sur",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 23,
+    "fields": {
+      "nombre": "ME",
+      "zona": "Oriente Medio",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 24,
+    "fields": {
+      "nombre": "NA",
+      "zona": "Norteamérica",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 25,
+    "fields": {
+      "nombre": "OCE",
+      "zona": "Oceanía",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 26,
+    "fields": {
+      "nombre": "RU",
+      "zona": "Rusia",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 27,
+    "fields": {
+      "nombre": "SEA",
+      "zona": "Sudeste Asiático",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 28,
+    "fields": {
+      "nombre": "TR",
+      "zona": "Turquía",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 29,
+    "fields": {
+      "nombre": "TW",
+      "zona": "Taiwán, Hong Kong y Macao",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 30,
+    "fields": {
+      "nombre": "VN",
+      "zona": "Vietnam",
+      "juego": 3
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 31,
+    "fields": {
+      "nombre": "NA",
+      "zona": "Norteamérica",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 32,
+    "fields": {
+      "nombre": "LATAM",
+      "zona": "Latinoamérica",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 33,
+    "fields": {
+      "nombre": "BR",
+      "zona": "Brasil",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 34,
+    "fields": {
+      "nombre": "EU",
+      "zona": "Europa",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 35,
+    "fields": {
+      "nombre": "AP",
+      "zona": "Asia-Pacífico",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 36,
+    "fields": {
+      "nombre": "KR",
+      "zona": "Corea",
+      "juego": 2
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 37,
+    "fields": {
+      "nombre": "Americas",
+      "zona": "América",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 38,
+    "fields": {
+      "nombre": "Europe",
+      "zona": "Europa",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.servidor",
+    "pk": 39,
+    "fields": {
+      "nombre": "APAC",
+      "zona": "Asia-Pacífico",
+      "juego": 5
+    }
+  },
+  {
+    "model": "appClient.usuario",
+    "pk": 1,
+    "fields": {
+      "nombre": "Ane",
+      "email": "ane@example.com",
+      "game_name": "AneGamer",
+      "tag_line": "EUW",
+      "edad": 21,
+      "pais": "España",
+      "dinero": "25.50",
+      "amigos": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "appClient.usuario",
+    "pk": 2,
+    "fields": {
+      "nombre": "Jon",
+      "email": "jon@example.com",
+      "game_name": "JonSniper",
+      "tag_line": "EUW",
+      "edad": 22,
+      "pais": "España",
+      "dinero": "10.00",
+      "amigos": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "appClient.usuario",
+    "pk": 3,
+    "fields": {
+      "nombre": "Lucía",
+      "email": "lucia@example.com",
+      "game_name": "LuciaMid",
+      "tag_line": "LAN",
+      "edad": 20,
+      "pais": "México",
+      "dinero": "0.00",
+      "amigos": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 1,
+    "fields": {
+      "usuario": 1,
+      "juego": 1,
+      "servidor": 3,
+      "icono": 1
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 2,
+    "fields": {
+      "usuario": 1,
+      "juego": 2,
+      "servidor": 34,
+      "icono": 6
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 3,
+    "fields": {
+      "usuario": 1,
+      "juego": 3,
+      "servidor": 18,
+      "icono": 4
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 4,
+    "fields": {
+      "usuario": 2,
+      "juego": 2,
+      "servidor": 34,
+      "icono": 7
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 5,
+    "fields": {
+      "usuario": 2,
+      "juego": 1,
+      "servidor": 3,
+      "icono": 2
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 6,
+    "fields": {
+      "usuario": 3,
+      "juego": 3,
+      "servidor": 21,
+      "icono": 5
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 7,
+    "fields": {
+      "usuario": 3,
+      "juego": 1,
+      "servidor": 6,
+      "icono": null
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 10,
+    "fields": {
+      "usuario": 1,
+      "juego": 5,
+      "servidor": 38,
+      "icono": 21
+    }
+  },
+  {
+    "model": "appClient.usuariojuego",
+    "pk": 11,
+    "fields": {
+      "usuario": 3,
+      "juego": 5,
+      "servidor": 37,
+      "icono": 23
+    }
+  }
+]
