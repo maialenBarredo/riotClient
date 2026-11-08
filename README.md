@@ -42,7 +42,7 @@ Nos hemos basado en la estructura del ejemplo **proyectoFUTBOL**. Hemos definido
 
 ## Base de Datos
 
-Mirar el esquema en `RiotClient/images/esquema_bd.png`
+Mirar el esquema en `RiotClient/images/esquema_bd.jpeg`
 
 | Modelo | Qué guarda | Con qué se relaciona |
 |---|---|---|
